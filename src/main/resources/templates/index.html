@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Бібліотека</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="menu-icon" onclick="openMenu()">&#9776;</div>
+    <a href="/" class="navbar-title">Бібліотека</a>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <button class="closebtn" onclick="closeMenu()">&times;</button>
+        <span class="sidebar-title">Бібліотека</span>
+    </div>
+    <div class="sidebar-line"></div>
+    <a href="/books" target="_self">Список наявних книг</a>
+    <a href="/addbook" target="_self">Повернути книгу</a>
+    <a href="/writeoff" target="_self">Списати книгу</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div class="content" id="main-content">
+    <h2>Ласкаво просимо до бібліотеки!</h2>
+    <p>Оберіть пункт у меню, щоб продовжити.</p>
+</div>
+
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").style.left = "0";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeMenu() {
+        document.getElementById("sidebar").style.left = "-400px";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+
+
+</script>
+
+</body>
+</html>

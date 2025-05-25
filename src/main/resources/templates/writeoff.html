@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Списання книг</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+
+
+<body>
+<div class="navbar">
+    <div class="menu-icon" onclick="openMenu()">&#9776;</div>
+    <a href="/" class="navbar-title">Повернутись на головну сторінку</a>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <button class="closebtn" onclick="closeMenu()">&times;</button>
+        <span class="sidebar-title">Бібліотека</span>
+    </div>
+    <div class="sidebar-line"></div>
+    <a href="/books" target="_self">Список наявних книг</a>
+    <a href="/addbook" target="_self">Повернути книгу</a>
+    <a href="/writeoff" target="_self">Списати книгу</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div class="form-container">
+    <h2>Списання книги</h2>
+    <form th:action="@{/writeoff}" method="post">
+        <label for="id">Введіть, будь ласка, ID книги для видалення:</label>
+        <input type="text" id="id" name="id" required>
+        <button type="submit">Списати книгу</button>
+    </form>
+
+    <div th:if="${message}" class="message" th:text="${message}"></div>
+</div>
+
+
+
+
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").style.left = "0";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeMenu() {
+        document.getElementById("sidebar").style.left = "-400px";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const message = document.querySelector('.message');
+        if (message) {
+            setTimeout(() => {
+                message.classList.add('fade-out');
+            }, 3000);
+        }
+    });
+
+</script>
+</body>
+</html>

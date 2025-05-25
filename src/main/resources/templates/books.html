@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список книг</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div class="menu-icon" onclick="openMenu()">&#9776;</div>
+    <a href="/" class="navbar-title">Повернутись на головну сторінку</a>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <button class="closebtn" onclick="closeMenu()">&times;</button>
+        <span class="sidebar-title">Бібліотека</span>
+    </div>
+    <div class="sidebar-line"></div>
+    <a href="/books" target="_self">Список наявних книг</a>
+    <a href="/addbook" target="_self">Повернути книгу</a>
+    <a href="/writeoff" target="_self">Списати книгу</a>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeMenu()"></div>
+
+<div class="content-wrapper">
+    <h2>Список книг</h2>
+    <div class="sort-block">
+        <div class="sort-label">Сортування:</div>
+        <div class="sort-options">
+            <a th:href="@{/books(sort='author')}">За прізвищем автора</a>
+            <a th:href="@{/books(sort='year')}">За роком видання</a>
+        </div>
+    </div>
+
+    <table class="book-table">
+        <thead>
+        <tr>
+            <th>ID ниги</th>
+            <th>Автор</th>
+            <th>Назва</th>
+            <th>Рік видання</th>
+            <th>К-сть примірників</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}">Автор</td>
+            <td th:text="${book.author}">Автор</td>
+            <td th:text="${book.title}">Назва</td>
+            <td th:text="${book.year}">Рік</td>
+            <td th:text="${book.copies}">Кількість</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<script>
+    function openMenu() {
+        document.getElementById("sidebar").style.left = "0";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closeMenu() {
+        document.getElementById("sidebar").style.left = "-400px";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+
+
+</script>
+
+</body>
+</html>

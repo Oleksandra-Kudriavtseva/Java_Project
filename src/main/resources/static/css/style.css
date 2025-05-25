@@ -1,0 +1,381 @@
+body {
+    background-color: #FAF1E6;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #99BC85;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-title {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.navbar .menu-icon {
+    margin-right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 400px;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    background-color: #FAF1E6;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    background-image: linear-gradient(to right, #D8EFD3 0%, #D8EFD3 100%);
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    background-repeat: no-repeat;
+    transition: background-position 0.4s ease;
+}
+
+
+.sidebar a:hover {
+    background-position: 0 0;
+}
+
+
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #99BC85;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.closebtn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 36px;
+    font-weight: 300;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    line-height: 1;
+}
+
+
+.closebtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-title {
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+}
+
+
+.overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.sidebar-line {
+    height: 1px;
+    width: 100%;
+    background-color: #99BC85;
+}
+
+body {
+    background-image: url('./images/pexels-mographe-30752163.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    padding: 20px 30px;
+    max-width: 900px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/*Стилі для сторінки з списком книг*/
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.95);
+    margin: 40px auto;
+    padding: 40px 50px;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    overflow-x: auto;
+    color: #222;
+}
+
+.book-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 16px;
+}
+
+.book-table th,
+.book-table td {
+    background-color: #fff;
+    padding: 12px 15px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    text-align: left;
+    vertical-align: middle;
+    color: #222;
+}
+
+.book-table th {
+    background-color: #99BC85;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.content-wrapper a {
+    color: #4B7745;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 25px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.content-wrapper a:hover {
+    color: #2E4A1F;
+    text-decoration: underline;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.sort-block {
+    margin-bottom: 20px;
+}
+
+.sort-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.sort-options a {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #34955d;
+    font-weight: 500;
+}
+
+.sort-options a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*Стилі для сторінки з списанням книг*/
+.form-container {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-container input[type="text"] {
+    width: 90%;
+    margin: 10px auto 20px;
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #99BC85;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #99BC85;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    color: #4B7745;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+.message.fade-out {
+    opacity: 0;
+}
+
+
+
+
+/* Стилі для сторінки додавання книги */
+.add-book-container {
+    max-width: 520px;
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f0f4e9, #d9e4c8);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.add-book-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3a5a20;
+    font-weight: 700;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.add-book-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #385723;
+    font-size: 1.05em;
+}
+
+.add-book-container input[type="text"],
+.add-book-container input[type="number"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 22px;
+    border: 2px solid #a5be7f;
+    border-radius: 8px;
+    font-size: 1em;
+    outline-color: #7BA96D;
+    transition: border-color 0.3s ease;
+}
+
+.add-book-container input[type="text"]:focus,
+.add-book-container input[type="number"]:focus {
+    border-color: #577d34;
+    box-shadow: 0 0 8px #7BA96D66;
+}
+
+.add-book-container button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background-color: #7BA96D;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(123, 169, 109, 0.5);
+}
+
+.add-book-container button:hover {
+    background-color: #5a7b45;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(90, 123, 69, 0.7);
+}
+
+.add-book-container .message {
+    text-align: center;
+    margin-top: 25px;
+    font-weight: 700;
+    color: #4B7745;
+    font-size: 1.1em;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.add-book-container .message.fade-out {
+    opacity: 0;
+}
+
+.add-book-container .error-message {
+    color: #b33a3a;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.add-book-button{
+    margin-top: 15px;
+}
+
+
+
